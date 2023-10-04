@@ -21,6 +21,7 @@ public class HomeController {
 
     @GetMapping(value = "")
     public String index(@RequestParam(defaultValue = "1") int page, Model model) {
+	System.out.println("Learning git...");
         page = page < 1 ? 0 : page - 1;
         Page<Post> posts = postService.getAllPublishedPostsByPage(page, appSetting.getPageSize());
 
